@@ -9,19 +9,18 @@ let package = Package(
         .library(
             name: "PINCache",
             targets: ["PINCacheWrapper"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/pinterest/PINOperation.git", from: "1.2.0"),        
-    ],
+    ],    
     targets: [
         .binaryTarget(
             name: "PINCache",
             path: "PINCache.xcframework"),
+	.binaryTarget(
+            name: "PINOperation",
+            path: "PINOperation.xcframework"),
 	.target(
             name: "PINCacheWrapper",
             dependencies: [
-               .target(name: "PINCache"),
-                "PINOperation"
+               .target(name: "PINCache"), .target(name: "PINOperation")
             ],
             path: "./Sources"      
         )
