@@ -23,7 +23,7 @@ let package = Package(
                .target(name: "PINCache"),
                 "PINOperation"
             ],
-            path: "./"      
+            path: "./Sources"      
         )
     ]
 )
